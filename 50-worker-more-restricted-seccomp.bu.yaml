@@ -1,0 +1,13 @@
+variant: openshift
+version: 4.8.0
+metadata:
+  name: 50-worker-more-restricted-seccomp
+  labels:
+    machineconfiguration.openshift.io/role: "worker"
+storage:
+  files:
+    - path: /var/lib/kubelet/seccomp/more-restricted.json
+      contents:
+        local: more-restricted.json
+      mode: 0644
+
